@@ -27,7 +27,8 @@ public class FileFilter {
      */
     public static List<String> filter(Path rootDirectory, String extension) throws IOException {
         FileFilterVisitor visitor = new FileFilterVisitor(extension);
-        Files.walkFileTree(rootDirectory, new FileFilterVisitor(extension));
+        Files.walkFileTree(rootDirectory, visitor);
         return visitor.getFilteredNames();
     }
+
 }
