@@ -29,6 +29,7 @@ public class FileFilter {
         FileFilterVisitor visitor = new FileFilterVisitor(extension);
         Files.walkFileTree(rootDirectory, visitor);
         return visitor.getFilteredNames();
+
     }
 
 }
