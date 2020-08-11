@@ -1,4 +1,5 @@
 package com.github.hcsp.polymorphism;
+
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
 import java.nio.file.FileVisitor;
@@ -22,7 +23,7 @@ public class FileFilterVisitor extends SimpleFileVisitor<Path> {
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-        if(file.getFileName().toString().endsWith(extension)){
+        if (file.getFileName().toString().endsWith(extension)) {
             filteredNames.add(file.getFileName().toString());
         }
         return FileVisitResult.CONTINUE;
